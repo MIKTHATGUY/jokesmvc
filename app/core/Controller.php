@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 namespace core;
 
 abstract class Controller
@@ -8,9 +9,8 @@ abstract class Controller
 	{
 		extract($data);
 		ob_start();
-		require '../app/view/layout/header.html.php';
-		require '../app/view/' . $view . '.html.php';
-		require '../app/view/layout/footer.html.php';
-		ob_end_flush();
+		require __DIR__ . '/../view/layout/header.html.php';
+		require __DIR__ . '/../view' . $view;
+		require __DIR__ . '/../view/layout/footer.html.php';
 	}
 }
