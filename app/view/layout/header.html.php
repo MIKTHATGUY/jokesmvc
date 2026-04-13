@@ -6,6 +6,8 @@
 </head>
 <body>
 
-<nav>
-
-</nav>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/all-jokes">All Jokes</a>
+  </nav>
+  <main>
