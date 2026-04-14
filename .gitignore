@@ -1,2 +1,3 @@
 # .gitignore
 .env.ini
+opencode.json

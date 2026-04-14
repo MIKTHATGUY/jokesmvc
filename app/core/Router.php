@@ -80,7 +80,7 @@ class Router
 
 		// Fallback if the view file doesn't exist
 		echo "<h1>Error {$code}</h1>";
-		echo '<p>Something went wrong.</p>';
+		echo '<p>Something went very wrong.</p>';
 		if ($message) {
 			echo '<pre>' . htmlspecialchars($message) . '</pre>';
 		}
