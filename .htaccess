@@ -1,8 +1,7 @@
 Options -Indexes -MultiViews
 RewriteEngine On
 
-RewriteCond %{REQUEST_URI} !/public/
-RewriteRule ^(.*)? /public/$1 [L]
+RewriteRule ^(.*)$ public/$1 [L]
 
 <Files ".env.ini">
     Require all denied

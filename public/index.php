@@ -11,6 +11,7 @@ use core\Router;
 
 Auth::init();
 Config::load();
+\core\InPageLogger::init();
 
 Router::get('/', JokesController::class . '@indexHome');
 Router::get('/all-jokes', JokesController::class . '@indexAllJokes');

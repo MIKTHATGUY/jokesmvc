@@ -24,8 +24,17 @@ class Router
 	{
 		$method = $_SERVER['REQUEST_METHOD'] ?: 'GET';
 		$path = parse_url($_SERVER['REQUEST_URI'] ?: '/', PHP_URL_PATH) ?: '/';
+
+		$basePath = parse_url(Config::get('app.APP_URL', ''), PHP_URL_PATH) ?: '';
+		if ($basePath && strpos($path, $basePath) === 0) {
+			$path = substr($path, strlen($basePath));
+		}
+
 		$path = filter_var($path, FILTER_SANITIZE_URL) ?: '/';
 		$path = rtrim($path, '/') ?: '/';
+		if (strpos($path, '/') !== 0) {
+			$path = '/' . $path;
+		}
 
 		parse_str($_SERVER['QUERY_STRING'] ?? '', self::$params);
 

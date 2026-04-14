@@ -10,6 +10,8 @@ class JokesController extends Controller
 {
 	public function indexHome(): void
 	{
+		\core\InPageLogger::log('info', 'This is a test message to prove the logger works!', ['file' => __FILE__, 'line' => __LINE__]);
+		
 		$this->render('/home.html.php', [
 			'title' => 'Home',
 			'message' => 'Welcome to the home page! Here you can find some of the best jokes around.'

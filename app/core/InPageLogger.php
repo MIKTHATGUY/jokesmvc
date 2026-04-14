@@ -28,8 +28,7 @@ class InPageLogger
 
     private static function isDevMode(): bool
     {
-        return getenv('APP_ENV') !== 'production'
-            && (!defined('APP_ENV') || APP_ENV !== 'production');
+        return \core\Config::get('app.APP_ENV', 'development') !== 'production';
     }
 
     public static function handleError(int $severity, string $message, string $file, int $line): bool
